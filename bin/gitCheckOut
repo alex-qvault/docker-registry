@@ -1,0 +1,3 @@
+HOME=$(pwd)
+mkdir -p ${HOME}/out
+cat ${HOME}/src/docker-vnc.tar.bz2.* > ${HOME}/out/docker-vnc.tar.bz2

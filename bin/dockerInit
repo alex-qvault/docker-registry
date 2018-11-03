@@ -1,0 +1,7 @@
+docker pull registry:2 &
+docker pull alex2006hw/vnc:1.0.0 &
+wait
+docker save -o in/docker-registry.tar registry:2
+bzip2 in/docker-registry.tar
+docker save -o in/docker-alex2006hw-vnc.tar alex2006hw/vnc:1.0.0
+bzip2 in/docker-alex2006hw-vnc.tar

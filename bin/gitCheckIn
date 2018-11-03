@@ -1,0 +1,2 @@
+HOME=$(pwd)
+split --bytes 100M --numeric-suffixes --suffix-length=3 ${HOME}/out/docker-vnc.tar.bz2 ${HOME}/src/docker-vnc.tar.bz2.

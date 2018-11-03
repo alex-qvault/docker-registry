@@ -1,0 +1,18 @@
+HOME=$(pwd)
+
+### add new image
+#docker pull alex2006hw/vnc:1.0.0
+#docker tag alex2006hw/vnc:1.0.0 localhost:5000/alex2006hw.com:1.0.1
+#docker push localhost:5000/alex2006hw.com:1.0.1
+#docker image remove alex2006hw/vnc:1.0.0
+#docker pull localhost:5000/alex2006hw.com:1.0.1
+
+docker import ${HOME}/out/docker-vnc.tar.bz2 alex2006hw/vnc:1.0.0
+docker import ${HOME}/src/docker-registry.tar.bz2 registry:2
+
+docker run -d \
+  -p 5000:5000 \
+  --name registry \
+  -v /netdisk/registry/data:/var/lib/registry \
+  --restart always \
+  registry:2
